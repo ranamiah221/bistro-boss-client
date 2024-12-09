@@ -56,6 +56,22 @@
         "price": 12.5
     },
     {
+        "_id": "642c155b2c4774f05c36ee7a",
+        "name": "Roast Duck Breast",
+        "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "category": "popular",
+        "price": 14.5
+    },
+    {
+        "_id": "642c155b2c4774f05c36ee7c",
+        "name": "Escalope de Veau",
+        "recipe": "Roasted duck breast (served pink) with gratin potato and a griottine cherry sauce",
+        "image": "https://cristianonew.ukrdevs.com/wp-content/uploads/2016/08/product-5-370x247.jpg",
+        "category": "popular",
+        "price": 14.5
+    },
+    {
         "_id": "642c155b2c4774f05c36ee9e",
         "name": "Breton Fish Stew",
         "recipe": "Chargrilled chicken with avocado, baby gem lettuce, baby spinach, shallots, French beans, walnuts, croutons and a mustard dressing",
