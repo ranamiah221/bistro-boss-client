@@ -18,7 +18,7 @@ const PopularItem = () => {
             <SectionHeader subHeading={'Check it popular item'} heading={'Popular Menu'}></SectionHeader>
             <div className='grid grid-cols-2 gap-8 mb-10'>
             {
-                items.map(item => <Menu item={item}></Menu>)
+                items.map(item => <Menu key={item._id} item={item}></Menu>)
             }
             </div>
            <div className='flex justify-center'> <button className='btn btn-outline border-0 border-b-4'>View Full Menu</button></div>
