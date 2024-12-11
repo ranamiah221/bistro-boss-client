@@ -13,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <Category></Category>
             <Acts></Acts>
-            <PopularItem></PopularItem>
+            <PopularItem category={'popular'}></PopularItem>
             <Contract></Contract>
             
             <Featured></Featured>
