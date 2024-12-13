@@ -2,6 +2,7 @@
 import SectionHeader from './../../Shared/SectionHeader/SectionHeader';
 import Menu from '../../components/Menu/Menu';
 import useMenu from '../../Hooks/useMenu';
+import { Link } from 'react-router-dom';
 
 const PopularItem = ({category, title, subTitle }) => {
     const [items] = useMenu();
@@ -21,7 +22,7 @@ const PopularItem = ({category, title, subTitle }) => {
                 popularItem.map(item => <Menu key={item._id} item={item}></Menu>)
             }
             </div>
-           <div className='flex justify-center'> <button className='btn btn-outline border-0 border-b-4'>View Full Menu</button></div>
+           <Link to={`/order`} className='flex justify-center'> <button className='btn btn-outline border-0 border-b-4'>View Full Menu</button></Link>
         </section>
     );
 };
