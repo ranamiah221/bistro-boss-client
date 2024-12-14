@@ -6,7 +6,7 @@ const useMenu = () => {
     const [items, setItems]=useState([])
     useEffect(()=>{
         const getData =async()=>{
-            const {data} = await axios.get('menu.json')
+            const {data} = await axios.get('http://localhost:5000/menus')
             setItems(data)
         } 
         getData()

@@ -1,13 +1,11 @@
-
-import SectionHeader from './../../Shared/SectionHeader/SectionHeader';
-import Menu from '../../components/Menu/Menu';
-import useMenu from '../../Hooks/useMenu';
+import React from 'react';
 import { Link } from 'react-router-dom';
+import Menu from '../../../components/Menu/Menu';
+import useMenu from '../../../Hooks/useMenu';
 
-const PopularItem = ({category, title, subTitle }) => {
+const MenuCategory = ({category, title, subTitle }) => {
     const [items] = useMenu();
     const popularItem = items.filter(item=> item.category ===`${category}`)
-    
     return (
         <section className='my-10'>
             {
@@ -22,9 +20,9 @@ const PopularItem = ({category, title, subTitle }) => {
                 popularItem.map(item => <Menu key={item._id} item={item}></Menu>)
             }
             </div>
-           <Link to={`/order`} className='flex justify-center'> <button className='btn btn-outline border-0 border-b-4'>View Full Menu</button></Link>
+           <Link to={`/order/${category}`} className='flex justify-center'> <button className='btn btn-outline border-0 border-b-4'>View Full Menu</button></Link>
         </section>
     );
 };
 
-export default PopularItem;
+export default MenuCategory;

@@ -2,10 +2,10 @@ import React from 'react';
 import Banner from '../Banner/Banner';
 import Category from '../Category/Category';
 import Acts from '../../Acts/Acts';
-import PopularItem from '../../PopularItem/PopularItem';
 import Contract from '../../Contract/Contract';
 import Featured from '../../Featured/Featured';
 import Testimonials from '../Testimonials/Testimonials';
+import MenuCategory from '../MenuCategory/MenuCategory';
 
 const Home = () => {
     return (
@@ -13,7 +13,7 @@ const Home = () => {
             <Banner></Banner>
             <Category></Category>
             <Acts></Acts>
-            <PopularItem category={'popular'}></PopularItem>
+            <MenuCategory category={"popular"}></MenuCategory>
             <Contract></Contract>
             
             <Featured></Featured>

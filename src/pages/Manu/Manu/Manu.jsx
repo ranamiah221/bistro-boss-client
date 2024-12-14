@@ -4,7 +4,7 @@ import bgSalad from "../../../assets/menu/salad-bg.jpg";
 import bgDessert from "../../../assets/menu/dessert-bg.jpeg";
 import bgPizza from "../../../assets/menu/pizza-bg.jpg";
 import bgSoup from "../../../assets/menu/soup-bg.jpg";
-import PopularItem from "../../PopularItem/PopularItem";
+import MenuCategory from "../../Home/MenuCategory/MenuCategory";
 
 const Manu = () => {
   return (
@@ -14,11 +14,11 @@ const Manu = () => {
         title="Our Menu"
         description={"Would you like to try a dish?"}
       ></CoverPage>
-      <PopularItem
-        category={"offered"}
-        title={"Todays Offered"}
-        subTitle={"Don't miss"}
-      ></PopularItem>
+      <MenuCategory
+      category={"offered"}
+      title={"Todays Offered"}
+      subTitle={"Don't miss"}></MenuCategory>
+     
       <CoverPage
         coverImg={bgDessert}
         title="DESSERTS"
@@ -26,7 +26,7 @@ const Manu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       ></CoverPage>
-      <PopularItem category={"dessert"}></PopularItem>
+      <MenuCategory category={"dessert"}></MenuCategory>
       <CoverPage
         coverImg={bgPizza}
         title="Pizza"
@@ -34,7 +34,7 @@ const Manu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       ></CoverPage>
-      <PopularItem category={"pizza"}></PopularItem>
+       <MenuCategory category={"pizza"}></MenuCategory>
       <CoverPage
         coverImg={bgSalad}
         title="Salad"
@@ -42,7 +42,7 @@ const Manu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       ></CoverPage>
-      <PopularItem category={"salad"}></PopularItem>
+     <MenuCategory category={"salad"}></MenuCategory>
       <CoverPage
         coverImg={bgSoup}
         title="Soup"
@@ -50,7 +50,7 @@ const Manu = () => {
           "Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       ></CoverPage>
-      <PopularItem category={"soup"}></PopularItem>
+    <MenuCategory category={"soup"}></MenuCategory>
     </div>
   );
 };
