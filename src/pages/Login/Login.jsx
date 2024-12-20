@@ -30,7 +30,9 @@ const Login = () => {
     <div className="authBg min-h-screen flex items-center">
       <div className="flex justify-between items-center border-4 p-5 border-blue-300 shadow-lg shadow-blue-700 rounded-lg m-10">
         <img className="w-1/2" src={loginImg} alt="" />
-        <form onSubmit={handleLogin} className="card-body">
+      <div className="w-1/2">
+      <form onSubmit={handleLogin} className="card-body">
+           <h2 className="text-4xl font-bold text-center underline my-3">Please Login</h2>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Email</span>
@@ -70,10 +72,11 @@ const Login = () => {
             
           </div>
           <div className="form-control mt-6">
-            <button type="submit" disabled={disabled} className="btn btn-primary">Login</button>
+            <button type="submit" disabled={disabled} className="btn bg-[#D1A054] text-white">Login</button>
           </div>
-          <p>New here to please <Link to='/signup'>Sign up</Link></p>
+          <p>New here to please <span className='text-xl font-bold underline'><Link to='/signup'>Sign up</Link></span></p>
         </form>
+      </div>
         
       </div>
     </div>
