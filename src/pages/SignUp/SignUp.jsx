@@ -3,10 +3,11 @@ import "../Login/Login.css";
 import loginImg from "../../assets/others/authentication1.png";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import useAuth from './../../Hooks/useAuth';
 
 
 const SignUp = () => {
-
+const {createUser}=useAuth();
   const {
     register,
     handleSubmit,
@@ -14,7 +15,13 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) =>{
-    console.log(data)
+    createUser(data.email, data.password)
+    .then(result=>{
+      console.log(result.user)
+    })
+    .catch(err=>{
+      console.log(err.message)
+    })
   } 
 
   return (
@@ -27,16 +34,25 @@ const SignUp = () => {
               Please Sign up
             </h2>
             <label htmlFor="">Name</label>
-            <input className="rounded-lg p-2"  {...register("name")} />
+            <input className="rounded-lg p-2"  {...register("name", {required: true})} />
+            {errors.name && <span>This field is required</span>}
+
             <label htmlFor="">Email</label>
-            <input className="rounded-lg p-2"   {...register("email")} />
+            <input className="rounded-lg p-2"   {...register("email", {required: true})} />
+            {errors.email && <span>This field is required</span>}
 
             {/* include validation with required or other standard HTML validation rules */}
             <label htmlFor="">Password</label>
-            <input className="rounded-lg p-2"  {...register("password", { required: true })} type="password" />
+            <input className="rounded-lg p-2"  {...register("password", { required: true,
+              maxLength:20, 
+              minLength:6,
+              pattern:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/
+             })} type="password" />
             {/* errors will return when field validation fails  */}
-            {errors.password && <span>This field is required</span>}
-
+            {errors.password?.type ==='required' && <span>This field is required</span>}
+            {errors.password?.type ==='minLength' && <span>Password must be 6 character</span>}
+            {errors.password?.type ==='maxLength' && <span>Password must be less than 20 character</span>}
+            {errors.password?.type ==='pattern' && <span>Password must be one uppercase lowercase number and special character</span>}
             <input className="btn bg-[#D1A054] text-white" value='Sign up' type="submit" />
             <p>
               Already you have a account please{" "}
