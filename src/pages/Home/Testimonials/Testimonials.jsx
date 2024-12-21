@@ -27,7 +27,7 @@ const Testimonials = () => {
             <div className="flex flex-col items-center px-20 text-center mb-20 space-y-4">
               <Rating style={{ maxWidth: 180 }} value={review.rating} readOnly />
               <FaQuoteLeft className="w-20 h-20" />
-              <p className="text-base font-normal">{review.details}</p>
+              <p className="text-base font-normal">{review?.details}</p>
               <h2 className="text-xl font-medium text-amber-500">
                 {review.name}
               </h2>

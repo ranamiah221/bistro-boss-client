@@ -3,12 +3,13 @@ import "./Login.css";
 import loginImg from "../../assets/others/authentication1.png";
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true)
+    const {signIn}= useAuth();
     useEffect(()=>{
-        loadCaptchaEnginge(6);
-        
+        loadCaptchaEnginge(6);   
     },[])
     const handleCaptcha =(e)=>{
      const user_captcha_value= e.target.value;
@@ -24,7 +25,13 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        signIn(email, password)
+        .then(result=>{
+          console.log(result.user);
+        })
+        .catch(err=>{
+          console.log(err.message);
+        })
     }
   return (
     <div className="authBg min-h-screen flex items-center">
