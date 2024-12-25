@@ -18,11 +18,11 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/menu',
-                element:<PrivateRoute><Manu></Manu></PrivateRoute>
+                element:<Manu></Manu>
             },
             {
                 path:'/order/:category',
-                element:<PrivateRoute><Order></Order></PrivateRoute>
+                element:<Order></Order>
             },
             {
                 path:'/login',
@@ -30,6 +30,10 @@ export const router=createBrowserRouter([
             },
             {
                 path:'/signup',
+                element:<SignUp></SignUp>
+            },
+            {
+                path:'/cart',
                 element:<SignUp></SignUp>
             },
         ]

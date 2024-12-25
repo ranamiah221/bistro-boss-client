@@ -2,12 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import loginImg from "../../assets/others/authentication1.png";
 import { loadCaptchaEnginge, LoadCanvasTemplate, LoadCanvasTemplateNoReload, validateCaptcha } from 'react-simple-captcha';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const [disabled, setDisabled] = useState(true)
     const {signIn}= useAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
     useEffect(()=>{
         loadCaptchaEnginge(6);   
     },[])
@@ -27,7 +30,8 @@ const Login = () => {
         const password = form.password.value;
         signIn(email, password)
         .then(result=>{
-          console.log(result.user);
+          Swal.fire("User login successful!");
+          navigate(location.state ? location.state : '/');
         })
         .catch(err=>{
           console.log(err.message);

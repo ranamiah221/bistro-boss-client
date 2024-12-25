@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
 import "../Login/Login.css";
 import loginImg from "../../assets/others/authentication1.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from './../../Hooks/useAuth';
+import Swal from "sweetalert2";
 
 
 const SignUp = () => {
-const {createUser}=useAuth();
+const {createUser, logOut}=useAuth();
+const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -17,7 +19,8 @@ const {createUser}=useAuth();
   const onSubmit = (data) =>{
     createUser(data.email, data.password)
     .then(result=>{
-      console.log(result.user)
+        navigate('/login');
+        Swal.fire("User Register successful!");
     })
     .catch(err=>{
       console.log(err.message)

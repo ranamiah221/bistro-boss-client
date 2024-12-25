@@ -20,7 +20,12 @@ const MenuCategory = ({category, title, subTitle }) => {
                 popularItem.map(item => <Menu key={item._id} item={item}></Menu>)
             }
             </div>
-           <Link to={`/order/${category}`} className='flex justify-center'> <button className='btn btn-outline border-0 border-b-4'>View Full Menu</button></Link>
+            <div>
+                {
+                   category ==='popular' ? '':<Link to={`/order/${category}`} className='flex justify-center'> <button className='btn btn-outline border-0 border-b-4'>View Full Menu</button></Link>   
+                }
+            </div>
+        
         </section>
     );
 };
