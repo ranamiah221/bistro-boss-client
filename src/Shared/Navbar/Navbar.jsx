@@ -8,7 +8,6 @@ const Navbar = () => {
   const { user, logOut } = useAuth();
   const navigate = useNavigate();
   const [carts]= useCart();
-  console.log(carts);
   const navLink = (
     <>
       <li>
@@ -21,11 +20,8 @@ const Navbar = () => {
         <Link to="/order/salad">Our Order</Link>
       </li>
       <li>
-        <Link>
-          <div className="">
-            <button className="mr-2">Cart</button>
-            <span className="badge badge-secondary">{carts.length}</span>
-          </div>
+        <Link to='dashboard/cart'>
+            <button className="mr-2">Dashboard</button>
         </Link>
       </li>
       <li>
